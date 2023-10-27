@@ -1,0 +1,8 @@
+prefix=/home/stefanocovone/catkin_ws/src/homework1/arm_description/cmake-build-debug/devel
+
+Name: arm_description
+Description: Description of arm_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
