@@ -2,6 +2,13 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     <xacro:macro name="arm_gazebo">
 
+        <!-- Load Gazebo lib and set the robot namespace -->
+        <gazebo>
+            <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+                <robotNamespace>/arm</robotNamespace>
+            </plugin>
+        </gazebo>
+
         <gazebo reference="f4">
             <material>Gazebo/Red</material>
         </gazebo>
