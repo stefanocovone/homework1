@@ -4,6 +4,8 @@
   <xacro:include filename="$(find arm_description)/urdf/arm.gazebo.xacro" />
   <xacro:include filename="$(find arm_description)/urdf/arm.transmission.xacro" />
 
+  <xacro:property name="camera_dim" value="0.025"/>
+
   <link name="base_link">
     <visual>
       <geometry>
@@ -401,6 +403,35 @@
       <inertia ixx="6.90013881e+01" ixy="0.0" ixz="0.0" iyy="1.24554875e+02" iyz="0.0" izz="1.04295793e+02"/>
     </inertial>
   </link>
+
+  <!-- code added to add a camera -->
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0 0 ${camera_dim}" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="camera_link" />
+  </joint>
+
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 -0.04 -0.02" rpy="1.57 0 0" />
+      <geometry>
+        <box size="0.06 0.04 0.07" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.06 -0.02" rpy="1.57 0 0" />
+      <geometry>
+        <mesh filename="package://arm_description/meshes/camera.stl" scale="0.9 0.9 0.9"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+  <!-- end of camera link -->
 
   <!-- This executes the xacro macro -->
   <xacro:arm_gazebo/>
