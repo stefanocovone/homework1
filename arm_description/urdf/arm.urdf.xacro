@@ -1,6 +1,7 @@
-<?xml version="1.0"?>
-
-<robot name="arm">
+<?xml version="1.0" ?>
+<robot name="arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Add your robot description here, and include the gazebo macro -->
+  <xacro:include filename="$(find arm_description)/urdf/arm.gazebo.xacro" />
 
   <link name="base_link">
     <visual>
@@ -10,10 +11,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
     <collision>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/> <!-- Adjust position and orientation as needed -->
       <geometry>
-        <mesh filename="package://arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.1 0.1 0.08"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
     <inertial>
       <mass value="0.1"/>
@@ -35,11 +36,11 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
     <collision>
+      <origin xyz="0 0.01 0" rpy="0 0 0"/> <!-- Adjust position and orientation as needed -->
       <geometry>
-          <mesh filename="package://arm_description/meshes/base_turn.stl" scale="0.001 0.001 0.001"/>
-        </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-    </collision>   
+        <box size="0.06 0.08 0.01"/>
+      </geometry>
+    </collision>
     <inertial>
       <mass value="0.1"/>
       <inertia ixx="1.35223008e+07" ixy="0.0" ixz="0.0" iyy="8.13814925e+06" iyz="0.0" izz="2.14903814e+07"/>
@@ -62,10 +63,10 @@
     
     </visual>
     <collision>
+      <origin xyz="0 0 0.003" rpy="0 0 0"/> <!-- Adjust position and orientation as needed -->
       <geometry>
-          <mesh filename="package://arm_description/meshes/base_turn_table_rot.stl" scale="0.001 0.001 0.001"/>
-        </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+        <box size="0.055 0.055 0.025"/>
+      </geometry>
     </collision>
     
     <inertial>
@@ -89,10 +90,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
     <collision>
+      <origin xyz="0.014 0 0" rpy="0 0 0"/> <!-- Adjust position and orientation as needed -->
       <geometry>
-          <mesh filename="package://arm_description/meshes/dyn.stl" scale="0.01 0.01 0.01"/>
-        </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+        <box size="0.051 0.031 0.041"/>
+      </geometry>
     </collision>
      <inertial>
       <mass value="0.1"/>
@@ -129,10 +130,10 @@
       </material>
     </visual>
     <collision>
+      <origin xyz="-0.002 -0.01 0" rpy="0 0 0"/> <!-- Adjust position and orientation as needed -->
       <geometry>
-          <mesh filename="package://arm_description/meshes/f4_n_f3.stl" scale="0.001 0.001 0.001"/>
-        </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+        <box size="0.052 0.1 0.03"/>
+      </geometry>
     </collision>
      <inertial>
       <mass value="0.1"/>
@@ -154,10 +155,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
     <collision>
+      <origin xyz="0.014 0 0" rpy="0 0 0"/> <!-- Adjust position and orientation as needed -->
       <geometry>
-          <mesh filename="package://arm_description/meshes/dyn.stl" scale="0.01 0.01 0.01"/>
-        </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+        <box size="0.051 0.031 0.041"/>
+      </geometry>
     </collision>
      <inertial>
       <mass value="0.1"/>
@@ -194,10 +195,10 @@
       </material>
     </visual>
     <collision>
+      <origin xyz="-0.002 -0.01 0" rpy="0 0 0"/> <!-- Adjust position and orientation as needed -->
       <geometry>
-          <mesh filename="package://arm_description/meshes/f4_n_f3.stl" scale="0.001 0.001 0.001"/>
-        </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+        <box size="0.052 0.1 0.03"/>
+      </geometry>
     </collision>
     
     <inertial>
@@ -221,10 +222,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
     <collision>
+      <origin xyz="0.014 0 0" rpy="0 0 0"/> <!-- Adjust position and orientation as needed -->
       <geometry>
-          <mesh filename="package://arm_description/meshes/dyn.stl" scale="0.01 0.01 0.01"/>
-        </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+        <box size="0.051 0.031 0.041"/>
+      </geometry>
     </collision>
     
     <inertial>
@@ -262,10 +263,10 @@
       </material>
     </visual>
     <collision>
+      <origin xyz="0.003 0 -0.009" rpy="0 0 0"/> <!-- Adjust position and orientation as needed -->
       <geometry>
-        <mesh filename="package://arm_description/meshes/wrist.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.055 0.06 0.044"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
     
      <inertial>
@@ -287,12 +288,12 @@
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
-    <collision>
-      <geometry>
-          <mesh filename="package://arm_description/meshes/dyn.stl" scale="0.01 0.01 0.01"/>
+      <collision>
+        <origin xyz="0.014 0 0" rpy="0 0 0"/> <!-- Adjust position and orientation as needed -->
+        <geometry>
+          <box size="0.051 0.031 0.041"/>
         </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-    </collision>
+      </collision>
     
     <inertial>
       <mass value="0.1"/>
@@ -329,10 +330,10 @@
       </material>
     </visual>
     <collision>
+      <origin xyz="0 0.005 0" rpy="0 0 0"/> <!-- Adjust position and orientation as needed -->
       <geometry>
-          <mesh filename="package://arm_description/meshes/the_crawer_base.stl" scale="0.001 0.001 0.001"/>
-        </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+        <box size="0.105 0.058 0.006"/>
+      </geometry>
     </collision>
     
     <inertial>
@@ -358,10 +359,10 @@
       </material>
     </visual>
     <collision>
+      <origin xyz="0.02 0 0.005" rpy="0 0 0"/> <!-- Adjust position and orientation as needed -->
       <geometry>
-          <mesh filename="package://arm_description/meshes/the_crawer.stl" scale="0.001 0.001 0.001"/>
-        </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+        <box size="0.07 0.04 0.045"/>
+      </geometry>
     </collision>
     
     <inertial>
@@ -388,10 +389,10 @@
       </material>
     </visual>
     <collision>
+      <origin xyz="0.02 0 0.005" rpy="0 0 0"/> <!-- Adjust position and orientation as needed -->
       <geometry>
-          <mesh filename="package://arm_description/meshes/the_crawer.stl" scale="0.001 0.001 0.001"/>
-        </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+        <box size="0.07 0.04 0.045"/>
+      </geometry>
     </collision>
     
     <inertial>
@@ -400,57 +401,8 @@
     </inertial>
   </link>
 
+  <!-- This executes the xacro macro -->
+  <xacro:arm_gazebo/>
 
-  <gazebo reference="f4">
-    <material>Gazebo/Red</material>
-  </gazebo>
 
-  <gazebo reference="f5">
-    <material>Gazebo/Red</material>
-  </gazebo>
-
-  <gazebo reference="wrist">
-    <material>Gazebo/Red</material>
-  </gazebo>
-
-  <gazebo reference="crawer_base">
-    <material>Gazebo/Red</material>
-  </gazebo>
-
-  <gazebo reference="base_link">
-    <material>Gazebo/Red</material>
-  </gazebo>
-
-  <gazebo reference="base_turn">
-    <material>Gazebo/Red</material>
-  </gazebo>
-
-  <gazebo reference="base_turn_rot">
-    <material>Gazebo/Red</material>
-  </gazebo>
-   
-  <gazebo reference="dyn2">
-    <material>Gazebo/Black</material>
-  </gazebo>
-  
-  <gazebo reference="dyn3">
-    <material>Gazebo/Black</material>
-  </gazebo>
-  
-  <gazebo reference="dyn4">
-    <material>Gazebo/Black</material>
-  </gazebo>
-  
-  <gazebo reference="dyn5">
-    <material>Gazebo/Black</material>
-  </gazebo>
-    
-  <gazebo reference="crawer_left">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  
-  <gazebo reference="crawer_right">
-    <material>Gazebo/Red</material>
-  </gazebo>   
-   
 </robot>
