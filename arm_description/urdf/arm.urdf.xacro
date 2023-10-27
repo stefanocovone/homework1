@@ -2,6 +2,7 @@
 <robot name="arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <!-- Add your robot description here, and include the gazebo macro -->
   <xacro:include filename="$(find arm_description)/urdf/arm.gazebo.xacro" />
+  <xacro:include filename="$(find arm_description)/urdf/arm.transmission.xacro" />
 
   <link name="base_link">
     <visual>
@@ -403,6 +404,7 @@
 
   <!-- This executes the xacro macro -->
   <xacro:arm_gazebo/>
+  <xacro:arm_transmission/>
 
 
 </robot>

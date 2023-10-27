@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="arm_transmission">
+
+        <!-- I don't know if these transmissions are required
+        <transmission name="base_1_2_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="base_1_2">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+        <transmission name="base_turn_rot_dyn2_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="base_turn_rot_dyn2">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+        <transmission name="dyn2_f4_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="dyn2_f4">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+        <transmission name="d4_dyn3_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="d4_dyn3">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+        <transmission name="dyn3_f5_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="dyn3_f5">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+        <transmission name="f5_dyn4_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="f5_dyn4">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+        <transmission name="f5_wrist_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="f5_wrist">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+        <transmission name="wrist_dyn5_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="wrist_dyn5">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+        <transmission name="dyn5_dyn5_r_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="dyn5_dyn5_r">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+        <transmission name="wrist_rotate_dyn5_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="wrist_rotate_dyn5">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+        <transmission name="crawer_base_crawer_left_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="crawer_base_crawer_left">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+        <transmission name="crawer_base_crawer_right_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="crawer_base_crawer_right">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+        -->
+
+        <transmission name="joint0_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="j0">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="j0_motor">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+
+        <transmission name="joint1_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="j1">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="j0_motor">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="joint2_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="j2">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="j0_motor">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="joint3_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="j3">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="j0_motor">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+    </xacro:macro>
+
+</robot>
