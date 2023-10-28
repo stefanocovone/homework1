@@ -17,7 +17,7 @@ void jointStateCallback(const sensor_msgs::JointState::ConstPtr& msg) {
     for (size_t i = 0; i < msg->name.size(); i++) {
         ROS_INFO("Joint %s: Position %.4f", msg->name[i].c_str(), msg->position[i]);
     }
-    float increments[4] = {0.05, 0.03, -0.03, 0.02};
+    float increments[4] = {0.2, 0.00, 0.00, 0.00};
     std_msgs::Float64 commandMsg[4];
     for (size_t i = 0; i < msg->name.size(); i++) {
         commandMsg[i].data = msg->position[i]+increments[i]; // Set the command value as needed
@@ -45,20 +45,3 @@ int main(int argc, char** argv) {
 
     return 0;
 }
-/*
-#include <ros/ros.h>
-#include <std_msgs/String.h>
-void chatterCallback(const std_msgs::String& msg)
-{
-    ROS_INFO("I heard: [%s]", msg.data.c_str());
-}
-int main(int argc, char* argv[])
-{
-    ros::init(argc, argv, "listener");
-    ros::NodeHandle nodeHandle;
-    ros::Subscriber subscriber = nodeHandle.subscribe("
-    chatter",10,chatterCallback);
-    ros::spin();
-    return 0;
-}
-*/
