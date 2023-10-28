@@ -5,7 +5,11 @@
     <!-- Everything is spawned under a namespace with the same name as the robot's. -->
 
     <arg name="hardware_interface" default="PositionJointInterface"/>
-    <arg name="controllers" default="joint_state_controller"/>
+    <arg name="controllers" default="joint_state_controller
+                 $(arg hardware_interface)_J0_controller
+                 $(arg hardware_interface)_J1_controller
+                 $(arg hardware_interface)_J2_controller
+                 $(arg hardware_interface)_J3_controller"/>
     <arg name="robot_name" default="arm" />
     <arg name="joint_state_frequency" default="100" />
     <arg name="robot_state_frequency" default="100" />
@@ -21,7 +25,7 @@
     <!-- Converts joint states to TF transforms for rviz, etc -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
           respawn="false" output="screen">
-        <remap from="joint_states" to="/$(arg robot_name)/joint_states" />
+        <remap from="/joint_states" to="/$(arg robot_name)/joint_states" />
         <param name="publish_frequency" value="$(arg robot_state_frequency)" />
     </node>
 
