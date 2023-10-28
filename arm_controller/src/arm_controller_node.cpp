@@ -17,9 +17,15 @@ void jointStateCallback(const sensor_msgs::JointState::ConstPtr& msg) {
     for (size_t i = 0; i < msg->name.size(); i++) {
         ROS_INFO("Joint %s: Position %.4f", msg->name[i].c_str(), msg->position[i]);
     }
-    std_msgs::Float64 commandMsg;
-    commandMsg.data = msg->position[0]+0.05; // Set the command value as needed
-    joint0CommandPub.publish(commandMsg); // Publish the command
+    float increments[4] = {0.05, 0.03, -0.03, 0.02};
+    std_msgs::Float64 commandMsg[4];
+    for (size_t i = 0; i < msg->name.size(); i++) {
+        commandMsg[i].data = msg->position[i]+increments[i]; // Set the command value as needed
+    }
+    joint0CommandPub.publish(commandMsg[0]); // Publish the command
+    joint1CommandPub.publish(commandMsg[1]); // Publish the command
+    joint2CommandPub.publish(commandMsg[2]); // Publish the command
+    joint3CommandPub.publish(commandMsg[3]); // Publish the command
 }
 
 int main(int argc, char** argv) {
