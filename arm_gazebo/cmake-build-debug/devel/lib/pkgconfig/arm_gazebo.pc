@@ -1,0 +1,8 @@
+prefix=/home/stefanocovone/catkin_ws/src/homework1/arm_gazebo/cmake-build-debug/devel
+
+Name: arm_gazebo
+Description: Description of arm_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

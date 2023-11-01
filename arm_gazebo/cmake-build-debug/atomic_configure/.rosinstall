@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/stefanocovone/catkin_ws/src/homework1/arm_gazebo/cmake-build-debug/devel/setup.sh
